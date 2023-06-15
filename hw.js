@@ -75,7 +75,6 @@ let c = -353.8; // Третє число
 
 if (a<b){  
     if (b<c){  
-                // a<b<c
         console.log ('Середнє число: '+b)
     }
     else if (c<b){
@@ -103,7 +102,7 @@ else if (b<a){
 
 // ---------- 6 ------------
 
-let day = 7;
+let day = 1;
 let arr= ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"]
 switch (day) {
   case 1:
