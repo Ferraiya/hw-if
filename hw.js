@@ -167,8 +167,90 @@ console.log(consonants)
 
 // ---------- 9 ------------
 
-let meter = 1;
-let km = meter*1000;
-let endingM = '!'; //regular ending
-let endingKm = '@';
-console.log(meter,'метр'+endingM, 'це', km,'кілометр'+endingKm)
+let meter = 100;
+let km = meter/1000;
+let meterLastDigit = meter % 10;
+let integ;
+let endingM;
+let endingKm;
+let meterArr = Array.from(String(meter))
+let preLastDigit = Number(meterArr[meterArr.length -2]);
+let thirdDigit = Number(meterArr[meterArr.length -3]);
+let forthDigit = Number(meterArr[meterArr.length -4]);
+let fifthDigit = Number(meterArr[meterArr.length -5]);
+
+if(isNaN(meter)){
+	console.log(meter + " is not a number") }
+
+ else if (/\d+\.\d+/.test(meter)) {
+(endingM = "а", endingKm = "a")
+console.log(meter,'метр'+endingM, 'це', km,'кілометр'+endingKm) }
+else {
+
+switch (true) {
+     case (meterLastDigit == 1): 
+          (preLastDigit==1 ? (endingM = "ів", endingKm = "a") : endingM = "", endingKm = "a");
+        break;
+
+     case (meterLastDigit >= 2 && meterLastDigit <= 4):
+      preLastDigit==1 ? (endingM = "ів", endingKm = "a"):( endingM = "и", endingKm = "a")
+      break;
+
+      case (meterLastDigit >4 && meterLastDigit <10):
+        (endingM = "ів", endingKm== "a")       
+             
+      case (meterLastDigit == 0):
+
+          switch (true){
+
+            case (meter == 0):
+              (endingM = "ів", endingKm = "ів");
+               break;
+
+
+            case (preLastDigit >= 1):
+              (endingM = "ів", endingKm = "а");
+               break;
+
+
+            case (preLastDigit == NaN):
+              (endingM = "ів", endingKm = "ів");
+              break;
+
+            case (preLastDigit == 0): 
+                switch (true){
+                  case (thirdDigit > 0): 
+                    (endingM = "ів", endingKm = "a");
+                    break;
+
+                  case (thirdDigit == NaN):
+                    (endingM = "ів", endingKm = "ів");
+                    break;
+
+                  case (thirdDigit == 0):
+                          switch (true){
+                              case (forthDigit == 1):
+
+                                switch (true){
+                                    case (meter == 1000  || fifthDigit > 1 && forthDigit == 1 || fifthDigit == 0 && forthDigit == 1):
+                                    (endingM = "ів", endingKm = "");
+                                    break;
+                                 }
+                              break;
+
+                              case (forthDigit > 1 && forthDigit < 5): 
+                                (endingM = "ів", endingKm = "и"); 
+                              break;
+
+                              case (forthDigit == 0 || forthDigit > 4 && forthDigit < 10 || forthDigit == NaN):
+                                (endingM = "ів", endingKm = "ів");
+                              break;
+                            }
+                    break;
+              }
+              break;
+              }
+              break;
+              }
+    console.log(meter,'метр'+endingM, 'це', km,'кілометр'+endingKm)
+}
