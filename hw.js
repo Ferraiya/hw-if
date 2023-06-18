@@ -167,7 +167,7 @@ console.log(consonants)
 
 // ---------- 9 ------------
 
-let meter = 100;
+let meter = 1009;
 let km = meter/1000;
 let meterLastDigit = meter % 10;
 let integ;
@@ -179,10 +179,10 @@ let thirdDigit = Number(meterArr[meterArr.length -3]);
 let forthDigit = Number(meterArr[meterArr.length -4]);
 let fifthDigit = Number(meterArr[meterArr.length -5]);
 
-if(isNaN(meter)){
-	console.log(meter + " is not a number") }
+/* if(meter == NaN){
+	console.log(meter + " is not a number") } else */
 
- else if (/\d+\.\d+/.test(meter)) {
+ if (/\d+\.\d+/.test(meter)) {
 (endingM = "а", endingKm = "a")
 console.log(meter,'метр'+endingM, 'це', km,'кілометр'+endingKm) }
 else {
@@ -197,8 +197,9 @@ switch (true) {
       break;
 
       case (meterLastDigit >4 && meterLastDigit <10):
-        (endingM = "ів", endingKm== "a")       
-             
+        (endingM = "ів", endingKm = "a");      
+        break;
+
       case (meterLastDigit == 0):
 
           switch (true){
