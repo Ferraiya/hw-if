@@ -167,17 +167,13 @@ console.log(consonants)
 
 // ---------- 9 ------------
 
-let meter = 1009;
+let meter = 1100000;
 let km = meter/1000;
 let meterLastDigit = meter % 10;
 let integ;
 let endingM;
 let endingKm;
 let meterArr = Array.from(String(meter))
-let preLastDigit = Number(meterArr[meterArr.length -2]);
-let thirdDigit = Number(meterArr[meterArr.length -3]);
-let forthDigit = Number(meterArr[meterArr.length -4]);
-let fifthDigit = Number(meterArr[meterArr.length -5]);
 
 /* if(meter == NaN){
 	console.log(meter + " is not a number") } else */
